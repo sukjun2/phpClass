@@ -2,7 +2,7 @@ body.fixed {
     overflow: hidden;
 }
 .login__popup {
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     position: fixed;
     left: 0;
     top: 0;
@@ -11,7 +11,7 @@ body.fixed {
     height: 100%;
     box-sizing: border-box;
     display: none;
- 
+
     &.open {
         @include flex_ce;
     }
@@ -20,7 +20,7 @@ body.fixed {
 .login__inner {
     width: 500px;
     background-color: #fff;
-    border-radius: 10px; 
+    border-radius: 10px;
     padding: 40px;
     box-sizing: border-box;
     position: relative;
@@ -39,8 +39,9 @@ body.fixed {
     @include border_bottom;
     padding-bottom: 20px;
     padding-top: 10px;
-    
-    legend, label {
+
+    legend,
+    label {
         @include blind;
     }
 }
@@ -80,7 +81,7 @@ body.fixed {
         cursor: pointer;
 
         span {
-            @include ir
+            @include ir;
         }
     }
 }

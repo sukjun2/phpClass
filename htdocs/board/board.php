@@ -82,8 +82,14 @@
 
     $viewNum = 10;
     $viewLimit = ($viewNum * $page) - $viewNum;
+
+    $sql = "SELECT count(myBoardID) FROM myBoard";
+    $result = $connect -> query($sql);
+    $boardCount = $result -> fetch_array(MYSQLI_ASSOC);
+    $boardCount = $boardCount['count(myBoardID)'];
     
-    // echo $_GET['page'];
+    // 총 게시글, 현재 페이지
+    echo "총 게시글 : {$boardCount}개 / 현재 : {$page} 페이지";
 
     // 1~20  --> 1page : DESC 0, 20  ---> ($viewNum * 1) - $viewNum
     // 21~40 --> 2page : DESC 20, 20 ---> ($viewNum * 2) - $viewNum
@@ -225,7 +231,7 @@
     }
 
     // 다음 페이지, 마지막 페이지
-    if($page != $endPage){
+    if($page < $endPage){
         $nextPage = $page + 1;
 
         echo "<li><a href='board.php?page={$nextPage}'>다음</a></li>";

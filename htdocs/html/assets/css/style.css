@@ -568,7 +568,8 @@ body.fixed {
   left: 0;
   bottom: -8px;
 }
-.login__contents legend, .login__contents label {
+.login__contents legend,
+.login__contents label {
   position: absolute;
   clip: rect(0 0 0 0);
   width: 1px;
