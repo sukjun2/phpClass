@@ -25,7 +25,7 @@
             <ul>
                 <li><a href="../login/join.php"><span>회원가입</span></a></li>
                 <li><a href="../board/board.php"><span>게시판</span></a></li>
-                <li><a href="#"><span>로그아웃</span></a></li>
+                <li><a href="../blog/blog.php"><span>블로그</span></a></li>
                 <li><a href="#"><span>연락처</span></a></li>
             </ul>
         </nav>
