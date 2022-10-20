@@ -25,25 +25,46 @@
     <!-- //header -->
 
     <main id="main">
-        <section id="banner">
+        <section id="blogSearch" class="container">
+            <h2>개발과 관련된 블로그입니다.</h2>
+            <div class="blog__search">
+                <form action="blogSearch.php">
+                    <legend>블로그 서치</legend>
+                    <label for="searchKeyword"></label>
+                    <input type="text" id="searchKeyword" name="searchKeyword" placeholder="검색어를 입력해주세요!">
+                    <button class="btn">검색하기</button>
+                </form>
+            </div>
         </section>
         <!-- //banner -->
 
         <section id="card" class="container">
-            <h2>javascript topic</h2>
+            <h2>topic</h2>
+            <a href="blogWrite.php" style="float: right; margin-top: 20px;">글쓰기</a>
             <div class="card__inner">
 <?php
     $sql = "SELECT * FROM myBlog WHERE blogDelete = 0 ORDER BY myBlogID DESC ";
     $result = $connect -> query($sql);
     foreach($result as $blog) {?>
+    <div class="card">
         <figure>
-        <img src="../assets/img/blog/<?=$blog['blogImgFile']?>" alt="사진4">
-            <a href="#" class="go" title="컨텐츠 바로가기"></a>
+        <img src="../assets/img/blog/<?=$blog['blogImgFile']?>" alt="사진">
+            <a href="blogView.php?blogID=<?=$blog['myBlogID']?>" class="go" title="컨텐츠 바로가기">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M0.646447 8.64645C0.451184 8.84171 0.451184 9.15829 0.646447 9.35355C0.841709 9.54882 1.15829 9.54882 1.35355 9.35355L0.646447 8.64645ZM9.5 1C9.5 0.723858 9.27614 0.5 9 0.5L4.5 0.5C4.22386 0.5 4 0.723858 4 1C4 1.27614 4.22386 1.5 4.5 1.5L8.5 1.5L8.5 5.5C8.5 5.77614 8.72386 6 9 6C9.27614 6 9.5 5.77614 9.5 5.5L9.5 1ZM1.35355 9.35355L9.35355 1.35355L8.64645 0.646447L0.646447 8.64645L1.35355 9.35355Z"
+                        fill="black" />
+                </svg>
+            </a>
+            <span class="cate"><?=$blog['blogCategory']?></span>
         </figure>
         <div>
-            <h3><?=$blog['blogTitle']?></h3>
-            <p><?=$blog['blogContents']?></p>
+            <a href="blogView.php?blogID=<?=$blog['myBlogID']?>">
+                <h3><?=$blog['blogTitle']?></h3>
+                <p><?=$blog['blogContents']?></p>
+            </a>
         </div>
+    </div>
 <?php
 }
 ?>
@@ -51,7 +72,6 @@
             </div>
         </section>
         <!-- //card -->
-
     </main>
     <!-- //main -->
 
@@ -60,5 +80,8 @@
 
     <?php include "../login/login.php" ?>
     <!-- //login -->
+
+    <script src="../assets/js/custom.js"></script>
+    <!-- //script -->
 </body>
 </html>

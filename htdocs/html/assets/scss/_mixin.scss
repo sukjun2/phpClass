@@ -32,13 +32,27 @@
     border-bottom: 3px solid $black;
 
     &::before {
-        content: "";
+        content: '';
         width: 100%;
         height: 1px;
         background: $black;
         position: absolute;
         left: 0;
         bottom: -8px;
+    }
+}
+@mixin border_top {
+    position: relative;
+    border-top: 3px solid $black;
+
+    &::before {
+        content: '';
+        width: 100%;
+        height: 1px;
+        background: $black;
+        position: absolute;
+        left: 0;
+        top: 4px;
     }
 }
 
@@ -106,11 +120,38 @@
 @mixin clearfix {
     &::before,
     &::after {
-        content: "";
+        content: '';
         display: block;
         line-height: 0;
     }
     &::after {
         clear: both;
     }
+}
+
+// 한줄 효과
+@mixin row1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+// 두줄 효과
+@mixin row2 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+// 세줄 효과
+@mixin row3 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
