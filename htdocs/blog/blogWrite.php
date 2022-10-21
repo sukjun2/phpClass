@@ -46,7 +46,7 @@
                         </div>
                         <div>
                             <label for="blogContents">내용</label>
-                            <textarea name="blogContents" id="blogContents" placeholder="내용을 넣어주세요" required></textarea>
+                            <textarea type="text" name="blogContents" id="blogContents" placeholder="내용을 넣어주세요" required></textarea>
                         </div>
                         <div>
                             <label for="blogFile">파일</label>

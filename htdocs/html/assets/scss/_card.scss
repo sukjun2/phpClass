@@ -15,10 +15,27 @@
     padding-bottom: 70px;
     align-items: flex-start;
 
+    &.horizon {
+        .card {
+            width: 100%;
+            display: flex;
+            margin-bottom: 20px;
+            justify-content: space-between;
+            h3 {
+                margin-top: 0;
+            }
+            figure {
+                width: 30%;
+            }
+            > div {
+                width: 67%;
+            }
+        }
+    }
+
     .card {
         position: relative;
         width: 24%;
-        height: 400px;
 
         figure {
             position: relative;
